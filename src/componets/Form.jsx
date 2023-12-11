@@ -1,15 +1,26 @@
 import React from 'react'
 
-function Form({inputText, setInputText}) {
+function Form({ inputText, setInputText, todos, setTodos }) {
 
-    const submitTodoHandle = (e)=>{
+    const submitTodoHandle = (e) => {
         e.preventDefault()
+
+        // inputText icerisine atıgımız input value'yi, todos'a atıcaz ordan TodoList'e gondericez array icerisinde object olarak
+        setTodos ([
+            ...todos,
+            { text: inputText, completed: false, id: Math.random() }
+        ]);
+
+        // inputu temizliyor
+        // setInputText("")
+        // console.log(todos);
     }
 
+
     // inputtun value alındı, app.js tanımlanan state'ye gonderildi,  degerleri input icerisindeki value'e de tutuyoruz
-    const inputTextHandle = (e)=>{
+    const inputTextHandle = (e) => {
         setInputText(e.target.value)
-        console.log(inputText)
+        // console.log(inputText)
     }
 
     return (
@@ -24,13 +35,13 @@ function Form({inputText, setInputText}) {
                 </div>
 
                 <div className="select">
-                        <select name="todos" className="filter-todo">
+                    <select name="todos" className="filter-todo">
                         <option value="all">All</option>
                         <option value="completed">Completed</option>
                         <option value="uncompleted">Uncompleted</option>
                     </select>
                 </div>
-                
+
             </form>
 
         </div>
