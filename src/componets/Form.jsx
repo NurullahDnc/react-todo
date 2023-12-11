@@ -2,6 +2,7 @@ import React from 'react'
 
 function Form({ inputText, setInputText, todos, setTodos }) {
 
+    //* Todo ekleme butonun tıklandıgında, veriyi state ediyor
     const submitTodoHandle = (e) => {
         e.preventDefault()
 
@@ -16,7 +17,7 @@ function Form({ inputText, setInputText, todos, setTodos }) {
         // console.log(todos);
     }
 
-
+    //* input icerisinde value alma
     // inputtun value alındı, app.js tanımlanan state'ye gonderildi,  degerleri input icerisindeki value'e de tutuyoruz
     const inputTextHandle = (e) => {
         setInputText(e.target.value)

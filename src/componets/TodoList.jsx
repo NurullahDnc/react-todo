@@ -14,8 +14,14 @@ export default function TodoList({todos, setTodos}) {
                 <Todo
                     text={todo.text}
                     key={todo.id}
+                    
+                    //. her todonun ıd karsılastırmak icin,  map func. dondugu icin her todonun id'sini alıyor
+                    todo = {todo} 
 
-                   
+                    //. todolar burda, todosların id almak icin, todos'dan silicez
+                    todos ={todos}
+                    //. todo guncelleme, todosu silmek icin
+                    setTodos={setTodos}
                 />
             ))}
         
